@@ -37,17 +37,20 @@ function descriptografar(texto) {
 }
 
 // copiar
-const btnCopiar = document.querySelector('.btn-copiar');
-btnCopiar.addEventListener('click', function() {
-    alert('O COPIAR PEGOU');
+// const btnCopiarTexto = document.querySelector('.decript-texto > button');
 
-    const section = document.querySelector('.decript-texto');
-    const divMsgCripto = section.querySelector('div');
+// console.log(btnCopiarTexto);
 
-    section.removeChild(divMsgCripto);
-    section.appendChild(divImg);
-    section.appendChild(divMsg);
-});
+// btnCopiarTexto.addEventListener('click', function() {
+//     alert('O COPIAR PEGOU');
+
+//     const section = document.querySelector('.decript-texto');
+//     const divMsgCripto = section.querySelector('div');
+
+//     section.removeChild(divMsgCripto);
+//     section.appendChild(divImg);
+//     section.appendChild(divMsg);
+// });
 
 // exibir texto na tela
 function exibirTexto(texto) {
@@ -64,6 +67,8 @@ function exibirTexto(texto) {
         p.innerText += letra;
     }
 
+    p.classList.add('texto-criptografado');
+
     div.appendChild(p);
     section.appendChild(div);
 
@@ -73,4 +78,33 @@ function exibirTexto(texto) {
     section.appendChild(btnCopiar);
     section.style.justifyContent = 'space-between';
 
+    btnCopiar.addEventListener('click', function() {
+        const texto = document.querySelector('.texto-criptografado').textContent;
+
+        navigator.clipboard.writeText(texto)
+            .then(() => {
+                alert('Texto copiado com sucesso');
+            })
+            .catch(err => {
+                console.error('Falha ao copiar o texto', err);
+            });
+    });
+
+    btnCopiar.addEventListener('click', function(event) {
+
+        const button = event.target;
+        const section = document.querySelector('.decript-texto');
+        const divMsgCripto = section.querySelector('div');
+        const textarea = document.querySelector('.texto-inserido');
+
+        section.style.justifyContent = 'center';
+        textarea.value = '';
+    
+        section.removeChild(divMsgCripto);
+        section.appendChild(divImg);
+        section.appendChild(divMsg);
+        button.remove();
+    });
+
+    
 }

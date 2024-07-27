@@ -53,7 +53,7 @@ body {
     margin-top: 15px;
 }
 
-.entrada input {
+.entrada textarea {
     width: 680px;
     height: 200px;
     background-color: var(--fundo-da-pagina);
@@ -61,7 +61,7 @@ body {
     border: none;
 }
 
-.entrada input::placeholder {
+.entrada textarea::placeholder {
     color: var(--botao-criptografar);
     text-align: center;
 }
