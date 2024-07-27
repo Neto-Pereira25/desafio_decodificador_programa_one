@@ -11,32 +11,12 @@ btnCript.addEventListener('click', function() {
 });
 
 function criptografar(texto) {
-    const textoCript = [];
-
-    for(let letra of texto) {
-        if (letra.toLowerCase() === 'a') {
-            letra = 'ai';
-        }
-
-        if (letra.toLowerCase() === 'e') {
-            letra = 'enter';
-        }
-        
-        if (letra.toLowerCase() === 'i') {
-            letra = 'imes';
-        }
-        
-        if (letra.toLowerCase() === 'o') {
-            letra = 'ober';
-        }
-        
-        if (letra.toLowerCase() === 'u') {
-            letra = 'ufat';
-        }
-
-        textoCript.push(letra);
-    }
-    return textoCript;
+    return texto
+        .replace(/e/g, 'enter')
+        .replace(/i/g, 'imes')
+        .replace(/a/g, 'ai')
+        .replace(/o/g, 'ober')
+        .replace(/u/g, 'ufat');
 }
 
 // descriptografia
@@ -48,35 +28,25 @@ btnDescript.addEventListener('click', function() {
 });
 
 function descriptografar(texto) {
-    if(texto.indexOf('ai')) {
-        texto = texto.split('ai').join('a');
-    }
-
-    if(texto.indexOf('enter')) {
-        texto = texto.split('enter').join('e');
-    }
-
-    if(texto.indexOf('imes')) {
-        texto = texto.split('imes').join('i');
-    }
-
-    if(texto.indexOf('ober')) {
-        texto = texto.split('ober').join('o');
-    }
-
-    if(texto.indexOf('ufat')) {
-        texto = texto.split('ufat').join('u');
-    }
-
-    return texto;
+    return texto
+        .replace(/enter/g, 'e')
+        .replace(/imes/g, 'i')
+        .replace(/ai/g, 'a')
+        .replace(/ober/g, 'o')
+        .replace(/ufat/g, 'u');
 }
 
 // copiar
 const btnCopiar = document.querySelector('.btn-copiar');
 btnCopiar.addEventListener('click', function() {
-    // let textoCopiado = document.querySelector('.texto-exibido');
-    // console.log(textoCopiado);
-    console.log('kkkk');
+    alert('O COPIAR PEGOU');
+
+    const section = document.querySelector('.decript-texto');
+    const divMsgCripto = section.querySelector('div');
+
+    section.removeChild(divMsgCripto);
+    section.appendChild(divImg);
+    section.appendChild(divMsg);
 });
 
 // exibir texto na tela
@@ -94,8 +64,6 @@ function exibirTexto(texto) {
         p.innerText += letra;
     }
 
-    p.classList.add('texto-exibido');
-
     div.appendChild(p);
     section.appendChild(div);
 
@@ -103,4 +71,6 @@ function exibirTexto(texto) {
     btnCopiar.textContent = 'Copiar';
 
     section.appendChild(btnCopiar);
+    section.style.justifyContent = 'space-between';
+
 }

@@ -55,7 +55,7 @@ body {
 
 .entrada input {
     width: 680px;
-    height: 48px;
+    height: 200px;
     background-color: var(--fundo-da-pagina);
     font-size: 24px;
     border: none;
@@ -100,68 +100,58 @@ body {
     border: solid 1px black;
 }
 
+.cript:hover {
+    background-color: #223388;
+}
+
 .decript {
     background-color: var(--botao-descriptografar);
     color: #0A3871;
     border: solid 1px #0A3871;
 }
 
+.decript:hover {
+    background-color: #d2e0f0;
+}
 
 
-
-
-/* .cript-texto {
-    width: 1360px;
-    height: 944px;
+/* Descriptografia */
+.decript-texto {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    justify-content: space-around;
-}
-
-.cript-texto {
-    display: flex;
-    justify-content: space-between;
-}
-
-.cript-texto button, .btn-copiar {
-    width: 328px;
-    height: 67px;
-    border-radius: 24px;
-    cursor: pointer;
-    border: solid 1px var(--botao-criptografar);
-}
-
-.cript {
-    background: var(--botao-criptografar);
-    color: var(--fundo-da-decriptogracao);
-    margin-right: 20px;
-}
-
-.cript:hover {
-    background-color: #010d5f;
-}
-
-.decript {
-    margin-left: 20px;
-}
-
-.decript:hover {
-    background-color: var(--fundo-da-decriptogracao);
-}
-
-.decript-texto {
-    height: 80%;
+    margin: 20px 20px 20px 0px;
+    padding: 20px;
     background-color: var(--fundo-da-decriptogracao);
     border-radius: 32px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     text-align: center;
+    width: 400px;
+}
+
+.decript-texto-inicial {
+    width: 300px;
+    height: 100px;
+}
+
+.decript-texto-inicial .msg-principal {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+.decript-texto-inicial .msg-secundaria {
+    font-size: 14px;
+    margin: 20px 0;
 }
 
 .btn-copiar {
+    width: 300px;
+    height: 67px;
+    border-radius: 24px;
+    font-size: 16px;
+    cursor: pointer;
+    border: solid 1px var(--botao-criptografar);
     margin-top: 20px;
     background-color: var(--fundo-da-decriptogracao);
     color: var(--cor-texto);
@@ -169,4 +159,4 @@ body {
 
 .btn-copiar:hover {
     background-color: var(--fundo-da-pagina);
-} */
+}
