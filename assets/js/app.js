@@ -1,13 +1,20 @@
-const divImg = document.querySelector('.decript-texto div');
-const divMsg = document.querySelector('.decript-texto div+div');
+const divResultado = document.querySelector('.resultado');
+const mensagemInicial = document.querySelector('.mensagem-inicial');
+
+divResultado.style.display = 'none';
 
 // criptografia
 const btnCript = document.querySelector('.cript');
 
 btnCript.addEventListener('click', function() {
-    const texto = document.querySelector('.texto-inserido').value;
-    const textoCriptografado = criptografar(texto);
-    exibirTexto(textoCriptografado);
+    const texto = document.querySelector('.texto-inserido');
+
+    if(texto.value){
+        const textoCriptografado = criptografar(texto.value);
+        exibirTexto(textoCriptografado);
+    } 
+    texto.value = '';
+
 });
 
 function criptografar(texto) {
@@ -22,9 +29,13 @@ function criptografar(texto) {
 // descriptografia
 const btnDescript = document.querySelector('.decript');
 btnDescript.addEventListener('click', function() {
-    const texto = document.querySelector('.texto-inserido').value;
-    const textoDescriptografado = descriptografar(texto);
-    exibirTexto(textoDescriptografado);
+    const texto = document.querySelector('.texto-inserido');
+
+    if(texto.value){
+        const textoDescriptografado = descriptografar(texto.value);
+        exibirTexto(textoDescriptografado);
+    } 
+    texto.value = '';
 });
 
 function descriptografar(texto) {
@@ -36,75 +47,26 @@ function descriptografar(texto) {
         .replace(/ufat/g, 'u');
 }
 
-// copiar
-// const btnCopiarTexto = document.querySelector('.decript-texto > button');
-
-// console.log(btnCopiarTexto);
-
-// btnCopiarTexto.addEventListener('click', function() {
-//     alert('O COPIAR PEGOU');
-
-//     const section = document.querySelector('.decript-texto');
-//     const divMsgCripto = section.querySelector('div');
-
-//     section.removeChild(divMsgCripto);
-//     section.appendChild(divImg);
-//     section.appendChild(divMsg);
-// });
-
 // exibir texto na tela
 function exibirTexto(texto) {
-    const section = document.querySelector('.decript-texto');
-
-    section.removeChild(divImg);
-    section.removeChild(divMsg);
-
-    const div = document.createElement('div');
-    const p = document.createElement('p');
-    const btnCopiar = document.createElement('button');
-
-    for (const letra of texto) {
-        p.innerText += letra;
+    if(texto) {
+        document.querySelector('.texto-criptografado').innerText = texto;
+        mensagemInicial.style.display = 'none';
+        divResultado.style.display = 'flex';
+    } else {
+        mensagemInicial.style.display = 'flex';
+        divResultado.style.display = 'none';
     }
-
-    p.classList.add('texto-criptografado');
-
-    div.appendChild(p);
-    section.appendChild(div);
-
-    btnCopiar.classList.add('btn-copiar');
-    btnCopiar.textContent = 'Copiar';
-
-    section.appendChild(btnCopiar);
-    section.style.justifyContent = 'space-between';
-
-    btnCopiar.addEventListener('click', function() {
-        const texto = document.querySelector('.texto-criptografado').textContent;
-
-        navigator.clipboard.writeText(texto)
-            .then(() => {
-                alert('Texto copiado com sucesso');
-            })
-            .catch(err => {
-                console.error('Falha ao copiar o texto', err);
-            });
-    });
-
-    btnCopiar.addEventListener('click', function(event) {
-
-        const button = event.target;
-        const section = document.querySelector('.decript-texto');
-        const divMsgCripto = section.querySelector('div');
-        const textarea = document.querySelector('.texto-inserido');
-
-        section.style.justifyContent = 'center';
-        textarea.value = '';
-    
-        section.removeChild(divMsgCripto);
-        section.appendChild(divImg);
-        section.appendChild(divMsg);
-        button.remove();
-    });
-
-    
 }
+
+document.querySelector('.btn-copiar').addEventListener('click', function() {
+    const texto = document.querySelector('.texto-criptografado').textContent;
+
+    navigator.clipboard.writeText(texto)
+        .then(() => {
+            document.querySelector('.texto-criptografado').innerText = 'Nenhuma messagem';
+        })
+        .catch(err => {
+            alert('Erro ao copiar mensagem');
+        });
+});

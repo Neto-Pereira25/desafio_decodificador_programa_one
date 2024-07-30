@@ -9,12 +9,12 @@
     </head>
     <body>
         <main class="pagina_principal">
-            <section class="cript-texto">
+            <div class="cript-texto">
                 <div class="logo-entrada">
                     <img src="./assets/img/logo-alura.png" alt="Logo da Alura">
                 </div>
                 <div class="entrada">
-                    <textarea class="texto-inserido" type="text" placeholder="Digite seu texto"></textarea>
+                    <textarea class="texto-inserido" placeholder="Digite seu texto"></textarea>
                 </div>
                 <div class="btn-inf">
                     <p>
@@ -25,17 +25,23 @@
                         <button class="decript">Descriptografar</button>
                     </div>
                 </div>
-            </section>
-            <section class="decript-texto">
-                <div>
-                    <img src="./assets/img/img1.svg" alt="Imagem de um rapaz olhando um diamente com uma lupa">
+            </div>
+            <div class="decript-texto">
+                <div class="mensagem-inicial">
+                    <div>
+                        <img src="./assets/img/img1.svg" alt="Imagem de um rapaz olhando um diamente com uma lupa">
+                    </div>
+                    <div class="decript-texto-inicial">
+                        <p class="msg-principal">Nenhuma mensagem encontrada</p>
+                        <p class="msg-secundaria">Digite um texto que você deseja criptografar ou descriptografar</p>
+                        <p></p>
+                    </div>
                 </div>
-                <div class="decript-texto-inicial">
-                    <p class="msg-principal">Nenhuma mensagem encontrada</p>
-                    <p class="msg-secundaria">Digite um texto que você deseja criptografar ou descriptografar</p>
-                    <p></p>
+                <div class="resultado">
+                    <p class="texto-criptografado"></p>
+                    <button class="btn-copiar">Copiar</button>
                 </div>
-            </section>
+            </div>
         </main>
         <footer></footer>
         <script src="./assets/js/app.js"></script>
