@@ -1,49 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Decodificador</title>
-        <link rel="stylesheet" href="./assets/styles/style.css">
-    </head>
-    <body>
-        <main class="pagina_principal">
-            <div class="cript-texto">
-                <div class="logo-entrada">
-                    <img src="./assets/img/logo-alura.png" alt="Logo da Alura">
-                </div>
-                <div class="entrada">
-                    <textarea class="texto-inserido" placeholder="Digite seu texto"></textarea>
-                </div>
-                <div class="btn-inf">
-                    <p>
-                        <span><img src="./assets/img/exclamacao.png" alt="icone de exclamção"></span> Apenas letras minúsculas e sem acento.
-                    </p>
-                    <div class="btn">
-                        <button class="cript">Criptografar</button>
-                        <button class="decript">Descriptografar</button>
-                    </div>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Decodificador</title>
+    <link rel="stylesheet" href="./assets/styles/style.css">
+    <link rel="stylesheet" href="./assets/styles/tablet.css">
+</head>
+
+<body>
+    <main class="pagina_principal">
+        <div class="cript-texto">
+            <div class="logo-entrada">
+                <img src="./assets/img/logo-alura.png" alt="Logo da Alura">
+            </div>
+            <div class="entrada">
+                <textarea class="texto-inserido" placeholder="Digite seu texto"></textarea>
+            </div>
+            <div class="btn-inf">
+                <p>
+                    <span><img src="./assets/img/exclamacao.png" alt="icone de exclamção"></span> Apenas letras
+                    minúsculas e sem acento.
+                </p>
+                <div class="btn">
+                    <button class="cript">Criptografar</button>
+                    <button class="decript">Descriptografar</button>
                 </div>
             </div>
-            <div class="decript-texto">
-                <div class="mensagem-inicial">
-                    <div>
-                        <img src="./assets/img/img1.svg" alt="Imagem de um rapaz olhando um diamente com uma lupa">
-                    </div>
-                    <div class="decript-texto-inicial">
-                        <p class="msg-principal">Nenhuma mensagem encontrada</p>
-                        <p class="msg-secundaria">Digite um texto que você deseja criptografar ou descriptografar</p>
-                        <p></p>
-                    </div>
+        </div>
+        <div class="decript-texto">
+            <div class="mensagem-inicial">
+                <div>
+                    <img src="./assets/img/img1.svg" alt="Imagem de um rapaz olhando um diamente com uma lupa">
                 </div>
-                <div class="resultado">
-                    <p class="texto-criptografado"></p>
-                    <button class="btn-copiar">Copiar</button>
+                <div class="decript-texto-inicial">
+                    <p class="msg-principal">Nenhuma mensagem encontrada</p>
+                    <p class="msg-secundaria">Digite um texto que você deseja criptografar ou descriptografar</p>
+                    <p></p>
                 </div>
             </div>
-        </main>
-        <footer></footer>
-        <script src="./assets/js/app.js"></script>
-    </body>
+            <div class="resultado">
+                <p class="texto-criptografado"></p>
+                <button class="btn-copiar">Copiar</button>
+            </div>
+        </div>
+    </main>
+    <script src="./assets/js/app.js"></script>
+</body>
+
 </html>

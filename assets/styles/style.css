@@ -16,9 +16,11 @@
 }
 
 body {
+    display: flex;
     box-sizing: border-box;
     background: var(--fundo-da-pagina);
     height: 100%;
+    width: 100%;
 }
 
 /* Estilizando a main */
@@ -169,4 +171,13 @@ body {
     align-items: center;
     width: 100%;
     height: 100%;
+}
+
+
+
+/* Celular */
+@media (max-width: 375px) {
+    .pagina_principal {
+        display: none;
+    }
 }
