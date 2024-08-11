@@ -40,7 +40,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
     flex-grow: 4;
-    margin: 20px 0px 60px 10px;
+    margin: 20px 0px 60px 20px;
 }
 
 .logo-entrada {
@@ -112,10 +112,13 @@ body {
     border: solid 1px #0A3871;
 }
 
+.cript, .decript {
+    cursor: pointer;
+}
+
 .decript:hover {
     background-color: #d2e0f0;
 }
-
 
 /* Descriptografia */
 .decript-texto {
@@ -171,13 +174,4 @@ body {
     align-items: center;
     width: 100%;
     height: 100%;
-}
-
-
-
-/* Celular */
-@media (max-width: 375px) {
-    .pagina_principal {
-        display: none;
-    }
 }

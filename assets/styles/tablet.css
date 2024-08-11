@@ -25,6 +25,7 @@
 
     .logo-entrada {
         align-items: flex-start;
+        margin-bottom: 50px;
     }
 
     .entrada {
@@ -32,16 +33,24 @@
         width: 90%;
     }
 
-    .entrada textarea {
-        height: 200px;
-    }
-
     .entrada textarea::placeholder {
         text-align: left;
+        font-size: 32px;
     }
 
     .btn-inf p {
         font-size: 12px;
+    }
+
+    .btn {
+        gap: 20px;
+    }
+
+    .cript, .decript {
+        width: 100%;
+        height: 67px;
+        /* margin: 20px; */
+        font-size: 32px;
     }
 
     .decript-texto {
@@ -55,11 +64,11 @@
         display: none;
     }
 
-    .msg-principal {
-        font-size: 24px;
+    .decript-texto-inicial .msg-secundaria {
+        font-size: 32px;
     }
 
-    .msg-secundaria {
+    .decript-texto-inicial .msg-secundaria {
         font-size: 16px;
     }
 
@@ -80,5 +89,17 @@
 
     .btn-copiar {
         width: 80vh;
+    }
+}
+
+@media (max-width: 500px) {
+    .entrada textarea {
+        height: 70vh;
+    }
+}
+
+@media (max-width: 400px) {
+    .entrada textarea {
+        height: 100vh;
     }
 }
