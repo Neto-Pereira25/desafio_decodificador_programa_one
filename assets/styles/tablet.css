@@ -13,12 +13,12 @@
         align-items: center;
         padding: 20px;
         width: 100%;
-        height: 100vh;
+        height: 90%;
     }
 
     .cript-texto {
-        margin: 40px 0 20px 0;
-        width: inherit;
+        width: 100%;
+        margin: 0;
         font-size: 32px;
         text-align: left;
     }
@@ -30,7 +30,11 @@
 
     .entrada {
         align-self: center;
-        width: 90%;
+        width: 100%;
+    }
+
+    .entrada textarea {
+        height: 90%;
     }
 
     .entrada textarea::placeholder {
@@ -38,8 +42,12 @@
         font-size: 32px;
     }
 
+    .btn-inf {
+        height: 30%;
+    }
+
     .btn-inf p {
-        font-size: 12px;
+        font-size: 18px;
     }
 
     .btn {
@@ -48,16 +56,17 @@
 
     .cript, .decript {
         width: 100%;
-        height: 67px;
-        /* margin: 20px; */
+        height: 100%;
         font-size: 32px;
     }
 
     .decript-texto {
-        width: 80vh;
-        height: 70vh;
-        margin: 10px 0 40px 0;
+        width: 100%;
+        height: 100%;
+        margin: 0;
         font-size: 24px;
+        max-width: 100%;
+        max-height: 40vh;
     }
 
     .mensagem-inicial img {
@@ -85,21 +94,17 @@
         overflow-y: auto;
         overflow-x: hidden;
         box-sizing: border-box;
+        font-size: 24px;
     }
 
     .btn-copiar {
-        width: 80vh;
+        width: 100%;
+        padding: 20px;
+        font-size: 32px;
     }
-}
 
-@media (max-width: 500px) {
-    .entrada textarea {
-        height: 70vh;
-    }
-}
-
-@media (max-width: 400px) {
-    .entrada textarea {
-        height: 100vh;
+    footer {
+        font-size: 24px;
+        height: 10%;
     }
 }

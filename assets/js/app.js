@@ -20,6 +20,10 @@ btnCript.addEventListener('click', function () {
 });
 
 function criptografar(texto) {
+    if (temLetraMaiusculaOuAcentuada(texto)) {
+        alert('Não é possível criptografar este texto, pois ele contém letra maiúsucla ou letras acentuadas');
+        return;
+    }
     return texto
         .replace(/e/g, 'enter')
         .replace(/i/g, 'imes')
@@ -43,12 +47,23 @@ btnDescript.addEventListener('click', function () {
 });
 
 function descriptografar(texto) {
+    if (temLetraMaiusculaOuAcentuada(texto)) {
+        alert('Não é possível descriptografar este texto, pois ele contém letra maiúsucla ou letras acentuadas');
+        return;
+    }
     return texto
         .replace(/enter/g, 'e')
         .replace(/imes/g, 'i')
         .replace(/ai/g, 'a')
         .replace(/ober/g, 'o')
         .replace(/ufat/g, 'u');
+}
+
+// função para verificar letras maiúsculas e acentuadas
+function temLetraMaiusculaOuAcentuada(texto) {
+    const regra = /[A-ZÀ-ÖØ-ÝÀ-ÿ!@#$%^&*()_+={}\[\]:;"'<>?/\\|`~\-]/;
+
+    return regra.test(texto);
 }
 
 // exibir texto na tela
