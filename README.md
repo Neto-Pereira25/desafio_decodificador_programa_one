@@ -32,6 +32,9 @@ desafio_decodificador_programa_one/
 
 3. Abra o arquivo `index.html` no seu navegador preferido para ver o projeto em funcionamento.
 
+## 🚀 Acessando o projeto
+
+1. Acesse o projeto na url: [(De)Codificador](https://decodificador-programa-one-jpsn.vercel.app/)
 
 ## ⚙️ Funcionalidades
 
