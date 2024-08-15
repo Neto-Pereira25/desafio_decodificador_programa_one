@@ -40,7 +40,7 @@ desafio_decodificador_programa_one/
 
 - 🔐 Criptografar texto.
 - 🔓 Descriptografar texto.
-- 🔄 Copiar texto.
+- 📋 Copiar texto.
 
 ## 💻 Tecnologias Utilizadas
 
